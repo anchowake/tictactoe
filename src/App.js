@@ -1,18 +1,50 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
+{/* Imports components */}
+import Announcement from './Announcement.jsx';
+import ResetButton from './ResetButton.jsx';
+import Tile from './Tile.jsx';
+
 class App extends Component {
+  constructor(){
+    super();
+    {/* Defines the state of the board */}
+    this.state = {
+      gameBoard: [
+        ' ',' ',' ',
+        ' ',' ',' ',
+        ' ',' ',' '
+      ],
+      turn: 'x'
+    }
+  }
+
+  updateBoard(loc, player){
+
+  }
+
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+      <div className="container">
+        {/* Header */}
+        <div className="menu">
+          <h1>Tic Tac Toe - React</h1>
+          <Announcement />
+          <ResetButton />
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        {/* Maps the gameBoard and retrieves value and index */}
+        {this.state.gameBoard.map(function(value,i){
+          return (
+            <Tile 
+              key={i}
+              loc={i}
+              value={value}
+              updateBoard={this.updateBoard.bind(this)}
+              turn={this.state.turn}
+            />
+          )
+        }.bind(this))}
       </div>
     );
   }
