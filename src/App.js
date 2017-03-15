@@ -16,12 +16,25 @@ class App extends Component {
         ' ',' ',' ',
         ' ',' ',' '
       ],
-      turn: 'x'
+      turn: 'x',
+      winner: null
     }
   }
 
   updateBoard(loc, player){
 
+  }
+
+  resetBoard(){
+    this.setState({
+      gameBoard: [
+        ' ',' ',' ',
+        ' ',' ',' ',
+        ' ',' ',' '
+      ],
+      turn: 'x',
+      winner: null
+    })
   }
 
   render() {
@@ -30,8 +43,12 @@ class App extends Component {
         {/* Header */}
         <div className="menu">
           <h1>Tic Tac Toe - React</h1>
-          <Announcement />
-          <ResetButton />
+          <Announcement 
+            winner = {this.state.winner}
+          />
+          <ResetButton 
+            reset = {this.resetBoard.bind(this)}
+          />
         </div>
         {/* Maps the gameBoard and retrieves value and index */}
         {this.state.gameBoard.map(function(value,i){
