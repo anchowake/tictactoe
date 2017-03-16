@@ -21,7 +21,7 @@ class App extends Component {
     }
   }
 
-  updateBoard(loc, player){
+  updateBoard(loc){
     if(!this.state.winner){
       if(this.state.gameBoard[loc] === 'x' || this.state.gameBoard[loc] === 'o'){
       {/* Sets Invalid Move State */}
