@@ -102,6 +102,7 @@ class App extends Component {
             reset={this.resetBoard.bind(this)}
           />
         </div>
+        <div className="boardContainer">
         {this.state.gameBoard.map(function(value,i){
           return (
             <Tile
@@ -113,6 +114,7 @@ class App extends Component {
             />
           )
         }.bind(this))}
+        </div>
       </div>
     );
   }
