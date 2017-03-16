@@ -39,7 +39,7 @@ class App extends Component {
         this.setState({turn:(this.state.turn === 'x') ? 'o' : 'x'});
 
         {/* Check ROWS  to see if there's a winner */}
-        for (let i = 0; i <= 2; i+=3){
+        for (let i = 0; i <= 8; i+=3){
             let rowsContent = this.state.gameBoard[i] + this.state.gameBoard[i+1] + this.state.gameBoard[i+2];
             if(rowsContent.match(/xxx|ooo/)){
                 this.setState({winner:this.state.turn});
