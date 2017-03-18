@@ -1,7 +1,7 @@
 .tile {
   width: 30%;
   height: 150px;
-  font-size: 60px;
+  font-size: 10em;
   background: red;
   border: 8px solid black;
   display: inline-block;
@@ -9,7 +9,20 @@
   text-align: center;
   line-height: 150px;
 }
-
+.tile p{
+  margin:0px;
+  line-height: 130px;
+}
 .hidden{
   display: none;
+}
+
+.boardContainer{
+  margin: 0 auto;
+  width: 50%;
+}
+
+.menu{
+  text-align: center;
+  margin-bottom: 20px;
 }
